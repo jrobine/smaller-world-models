@@ -63,7 +63,7 @@ def main() -> None:
     recurrent_agent = False
     eval_last_only = True
 
-    debug = True
+    debug = False
     profile = False
     if debug:
         state_repr_batch_size = 40

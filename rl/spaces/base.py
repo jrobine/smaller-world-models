@@ -24,11 +24,11 @@ class TensorSpace(Space, ABC):
                  shape: Optional[torch.Size] = None,
                  dtype: Optional[torch.dtype] = None,
                  device: Optional[torch.device] = None) -> None:
+        self._device = device
+        self._torch_random = None
         super().__init__(None, None)
         self.shape = shape
         self.dtype = dtype
-        self._device = device
-        self._torch_random = None
 
     def from_gym_sample(self, x: np.ndarray) -> Tensor:
         """Converts the sample from a numpy array to a tensor. The sample is expected to be from the corresponding gym
